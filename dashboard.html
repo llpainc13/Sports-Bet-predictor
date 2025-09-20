@@ -1,0 +1,74 @@
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Dashboard - Sports Bet Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>⚽ Sports Bet Predictor</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/dashboard" class="active">Predictor</a>
+        </nav>
+    </header>
+    
+    <main class="dashboard">
+        <section class="prediction-form">
+            <h2>Match Prediction</h2>
+            <form id="predictionForm">
+                <div class="form-group">
+                    <label for="homeTeam">Home Team:</label>
+                    <select id="homeTeam" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="awayTeam">Away Team:</label>
+                    <select id="awayTeam" required></select>
+                </div>
+                <button type="submit">Predict Outcome</button>
+            </form>
+        </section>
+        
+        <section class="prediction-result" id="predictionResult" style="display: none;">
+            <h2>Prediction Results</h2>
+            <div class="match-info">
+                <span id="homeTeamName"></span>
+                <span>vs</span>
+                <span id="awayTeamName"></span>
+            </div>
+            <div class="probabilities">
+                <div class="probability-bar">
+                    <label>Home Win: <span id="homeWinProb">0%</span></label>
+                    <div class="bar-container">
+                        <div id="homeWinBar" class="bar home-win"></div>
+                    </div>
+                </div>
+                <div class="probability-bar">
+                    <label>Draw: <span id="drawProb">0%</span></label>
+                    <div class="bar-container">
+                        <div id="drawBar" class="bar draw"></div>
+                    </div>
+                </div>
+                <div class="probability-bar">
+                    <label>Away Win: <span id="awayWinProb">0%</span></label>
+                    <div class="bar-container">
+                        <div id="awayWinBar" class="bar away-win"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="confidence">
+                <p>Confidence: <span id="confidence">0%</span></p>
+            </div>
+        </section>
+        
+        <section class="recent-matches">
+            <h2>Recent Matches</h2>
+            <div id="matchesList"></div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
